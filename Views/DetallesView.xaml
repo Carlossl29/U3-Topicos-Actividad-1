@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U3_Topicos_Actividad_1.Views.DetallesView"
+             xmlns:views="clr-namespace:U3_Topicos_Actividad_1.Views"
+             xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+             x:DataType="viewmodel:InventarioViewModel"
+             Shell.NavBarIsVisible="False"
+             Background="#f5b868"
+             Title="DetallesView">
+    <Border Stroke="#642715" StrokeThickness="3">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="Start" HeightRequest="50" ImageSource="tacha.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerListaCommand}" CommandParameter="{Binding Categoria}"></Button>
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                    <Button Grid.Column="2" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="End" HeightRequest="50" ImageSource="editar.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerEditarCommand}" Margin="0,0,5,0"></Button>
+                    <Button Grid.Column="2" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="End" HeightRequest="50" ImageSource="eliminar.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerEliminarCommand}"></Button>
+                </HorizontalStackLayout>
+            </Grid>
+            <Border Grid.Row="1" Margin="0,0,0,10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".3*"></RowDefinition>
+                        <RowDefinition Height=".7*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding Ingrediente.Imagen}" Margin="20,20,20,0" Aspect="AspectFill" WidthRequest="150"></Image>
+                        <ScrollView Grid.Row="1">
+                        <StackLayout>
+                            <Label TextColor="#503829" Margin="10" FontSize="35" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="{Binding Ingrediente.Nombre}"></Label>
+                            <Label TextColor="#503829" Margin="10,0,10,10" FontSize="25" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Text="{Binding Ingrediente.Descripcion}"></Label>
+                            <Label TextColor="#503829" Margin="10,0,10,10" FontSize="25" HorizontalTextAlignment="Start" LineBreakMode="WordWrap">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="#503829" FontAttributes="Bold">Cantidad:</Span>
+                                        <Span Text=" "></Span>
+                                        <Span Text="{Binding Ingrediente.Cantidad}" TextColor="Black"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label TextColor="#503829" Margin="10,0,10,10" FontSize="25" HorizontalTextAlignment="Start" LineBreakMode="WordWrap">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="#503829" FontAttributes="Bold">Proveedor:</Span>
+                                        <Span Text=" "></Span>
+                                        <Span Text="{Binding Ingrediente.Proveedor}" TextColor="Black"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label TextColor="#503829" Margin="10,0,10,10" FontSize="25" HorizontalTextAlignment="Start" LineBreakMode="WordWrap">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="#503829" FontAttributes="Bold">Caducidad:</Span>
+                                        <Span Text=" "></Span>
+                                        <Span Text="{Binding Ingrediente.Caducidad, StringFormat='{}{0:d/MM/yyyy}'}" TextColor="Black"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label TextColor="#503829" Margin="10,0,10,10" FontSize="25" HorizontalTextAlignment="Start" LineBreakMode="WordWrap">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="#503829" FontAttributes="Bold">Medida:</Span>
+                                        <Span Text=" "></Span>
+                                        <Span Text="{Binding Ingrediente.Medida}" TextColor="Black"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</ContentPage>

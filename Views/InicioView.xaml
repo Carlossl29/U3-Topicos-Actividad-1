@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U3_Topicos_Actividad_1.Views.InicioView"
+             xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Background="#f5b868"
+             Title="Inicio">
+    <Border Stroke="#642715" StrokeThickness="3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".4*"></RowDefinition>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height=".3*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="#fee5bd" Margin="10,20,10,0" Stroke="#642715" StrokeThickness="1.5">
+        <Image Grid.Row="0" HorizontalOptions="Center" Source="pxart.png"></Image>
+        </Border>
+            <Label Text="INVENTARIO" TextColor="#642715" VerticalOptions="Center" FontFamily="Javanese" Grid.Row="1" FontSize="45" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,15,0,0"></Label>
+        <StackLayout Grid.Row="2">
+                <Button Margin="10,20,10,10" FontSize="20" BackgroundColor="#fee5bd" Text="Vegetales" TextColor="#503829" BorderColor="#622715" BorderWidth=".5" FontAttributes="Bold" Command="{Binding VerListaCommand}" CommandParameter="{x:Static viewmodel:Categorias.Vegetales}"></Button>
+                <Button Margin="10" FontSize="20" BackgroundColor="#fee5bd" Text="Carnes" TextColor="#503829" BorderColor="#622715" BorderWidth=".5" FontAttributes="Bold" Command="{Binding VerListaCommand}" CommandParameter="{x:Static viewmodel:Categorias.Carnes}"></Button>
+                <Button Margin="10" FontSize="20" BackgroundColor="#fee5bd" Text="Frutas" TextColor="#503829" BorderColor="#622715" BorderWidth=".5" FontAttributes="Bold" Command="{Binding VerListaCommand}" CommandParameter="{x:Static viewmodel:Categorias.Frutas}"></Button>
+                <Button Margin="10" FontSize="20" BackgroundColor="#fee5bd" Text="Condimentos" TextColor="#503829" BorderColor="#622715" BorderWidth=".5" FontAttributes="Bold" Command="{Binding VerListaCommand}" CommandParameter="{x:Static viewmodel:Categorias.Condimentos}"></Button>
+        </StackLayout>
+    </Grid>
+    </Border>
+</ContentPage>

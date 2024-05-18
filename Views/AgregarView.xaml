@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U3_Topicos_Actividad_1.Views.AgregarView"
+             xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Background="#f5b868"
+             x:DataType="viewmodel:InventarioViewModel"
+             Title="AgregarView">
+    <Border Stroke="#642715" StrokeThickness="3">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height=".8*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="Start" HeightRequest="50" ImageSource="tacha.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerListaCommand}" CommandParameter="{Binding Categoria}"></Button>
+                <Label Text="AGREGAR" TextColor="#642715" VerticalOptions="Center" FontFamily="Javanese" Grid.Column="1" FontSize="40" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                <Button Grid.Column="2"  BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="End" HeightRequest="50" ImageSource="check.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding AgregarCommand}"></Button>
+            </Grid>
+            <Border Grid.Row="1" Margin="0,0,0,10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                <ScrollView>
+                <StackLayout>
+                    <Label Text="Nombre" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                    <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                        <Entry HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" HorizontalTextAlignment="Center" Text="{Binding Ingrediente.Nombre}"></Entry>
+                    </Border>
+                    <Label Text="Imagen" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <Entry HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" HorizontalTextAlignment="Center" Text="{Binding Ingrediente.Imagen}"></Entry>
+                        </Border>
+                        <Label Text="Cantidad" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <Entry HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" HorizontalTextAlignment="Center" Text="{Binding Ingrediente.Cantidad}"></Entry>
+                        </Border>
+                        <Label Text="Descripción" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <Entry HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" Text="{Binding Ingrediente.Descripcion}"></Entry>
+                        </Border>
+                        <Label Text="Proveedor" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <Entry HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" Text="{Binding Ingrediente.Proveedor}"></Entry>
+                        </Border>
+                        <Label Text="Caducidad" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <DatePicker HorizontalOptions="Center" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" Date="{Binding Ingrediente.Caducidad}"></DatePicker>
+                        </Border>
+                        <Label Text="Medida" TextColor="#503829" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" Padding="10"></Label>
+                        <Border Margin="10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                            <Picker TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" HorizontalOptions="Center" HorizontalTextAlignment="Center" ItemsSource="{Binding ListaMedidas}" SelectedItem="{Binding Ingrediente.Medida}"></Picker>
+                        </Border>
+                        <Label Text="{Binding Error}" TextColor="DarkRed" FontSize="25" HorizontalTextAlignment="Center" FontAttributes="Bold" Padding="10" LineBreakMode="WordWrap"></Label>
+                    </StackLayout>
+                </ScrollView>
+            </Border>
+        </Grid>
+    </Border>
+
+</ContentPage>

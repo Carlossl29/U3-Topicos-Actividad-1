@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U3_Topicos_Actividad_1.Views.EliminarView"
+             xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+             x:DataType="viewmodel:InventarioViewModel"
+             Shell.NavBarIsVisible="False"
+             Background="#f5b868"
+             Title="EliminarView">
+    <Border Stroke="#642715" StrokeThickness="3">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="Start" HeightRequest="50" ImageSource="tacha.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerDetallesCommand}" CommandParameter="{Binding Ingrediente}"></Button>
+                <Label Text="ELIMINAR" TextColor="#642715" VerticalOptions="Center" FontFamily="Javanese" Grid.Column="1" FontSize="40" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                <Button Grid.Column="2"  BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="End" HeightRequest="50" ImageSource="check.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding EliminarCommand}"></Button>
+            </Grid>
+            <Border Grid.Row="1" Margin="0,0,0,10" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".110*"></RowDefinition>
+                        <RowDefinition Height=".2*"></RowDefinition>
+                        <RowDefinition Height=".2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" TextColor="#503829" Margin="20" FontSize="40" FontFamily="Javanese" HorizontalTextAlignment="Center" LineBreakMode="WordWrap">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span TextColor="#503829" FontAttributes="Bold">Desea eliminar el ingrediente:</Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Image Grid.Row="1" Source="{Binding Ingrediente.Imagen}" Margin="20,0,20,0" Aspect="AspectFill" WidthRequest="200" HeightRequest="250"></Image>
+                    <Label Grid.Row="2" TextColor="#503829" Margin="20" FontSize="40" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" FontAttributes="Bold" FontFamily="Javanese" Text="{Binding Ingrediente.Nombre}"></Label>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="U3_Topicos_Actividad_1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:U3_Topicos_Actividad_1"
+    xmlns:views="clr-namespace:U3_Topicos_Actividad_1.Views"
+    xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+    Shell.FlyoutBehavior="Disabled"
+    Title="U3_Topicos_Actividad_1">
+    <Shell.BindingContext>
+        <viewmodel:InventarioViewModel></viewmodel:InventarioViewModel>
+    </Shell.BindingContext>
+
+    <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate views:InicioView}"
+        Route="Inicio" />
+
+    <ShellContent
+        Title="Editar"
+        ContentTemplate="{DataTemplate views:EditarView}"
+        Route="Editar" />
+
+    <ShellContent
+        Title="Agregar"
+        ContentTemplate="{DataTemplate views:AgregarView}"
+        Route="Agregar" />
+
+    <ShellContent
+        Title="Lista"
+        ContentTemplate="{DataTemplate views:ListaView}"
+        Route="Lista" />
+
+    <ShellContent
+        Title="Eliminar"
+        ContentTemplate="{DataTemplate views:EliminarView}"
+        Route="Eliminar" />
+
+    <ShellContent
+        Title="Detalles"
+        ContentTemplate="{DataTemplate views:DetallesView}"
+        Route="Detalles" />
+
+</Shell>

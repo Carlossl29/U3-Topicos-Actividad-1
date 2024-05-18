@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U3_Topicos_Actividad_1.Views.ListaView"
+             xmlns:viewmodel="clr-namespace:U3_Topicos_Actividad_1.ViewModels"
+             xmlns:views="clr-namespace:U3_Topicos_Actividad_1.Views"
+             Shell.NavBarIsVisible="False"
+             Background="#f5b868"
+             x:Name="Lista"
+             Title="Lista">
+    <Border Stroke="#642715" StrokeThickness="3">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".7*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+            <Border Background="Transparent" StrokeThickness="0" Margin="10" HeightRequest="65">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="70" HorizontalOptions="Start" HeightRequest="50" ImageSource="tacha.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerInicioCommand}"></Button>
+                        <FlexLayout Grid.Column="1" HorizontalOptions="Fill" Margin="10,0,0,0">
+                            <Image>
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="papa.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="uva.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="atun.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="aceite.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Image>
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="tomate.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="naranja.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="langosta.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="mermelada.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Image>
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="zanahoria.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="cereza.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="salmon.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="encurtido.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Image Source="cereza.png">
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="parsnip.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="platano.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="camaron.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="mayonesa.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Image>
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="cauliflower.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="manzana.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="perca.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="pasas.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Image>
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Vegetales}">
+                                        <Setter Property="Source" Value="calabaza.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Frutas}">
+                                        <Setter Property="Source" Value="pina.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Carnes}">
+                                        <Setter Property="Source" Value="calamar.png"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image" Binding="{Binding Categoria}" Value="{x:Static viewmodel:Categorias.Condimentos}">
+                                        <Setter Property="Source" Value="azucar.png"></Setter>
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                        </FlexLayout>
+                    </Grid>
+                </Border>
+                <Border Background="#fee5bd" Stroke="#642715" Margin="10,0,10,10" HeightRequest="60" StrokeThickness="1.5">
+                    <Picker TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" HorizontalTextAlignment="Center" ItemsSource="{Binding ListaFiltros}" SelectedItem="{Binding FiltroSeleccionado}"></Picker>
+                </Border>
+                <Border Padding="5" Background="#fee5bd" Stroke="#642715" Margin="10,0,10,10" StrokeThickness="1.5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" HorizontalOptions="Fill" TextColor="#503829" FontSize="20" BackgroundColor="#fee5bd" Text="{Binding Busqueda}"></Entry>
+                        <Button Grid.Column="1" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="60" HeightRequest="50" ImageSource="lupa.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding BuscarCommand}"></Button>
+                        <Button Grid.Column="2" BackgroundColor="#fee5bd" CornerRadius="0" WidthRequest="55" Margin="5,0,0,0" HeightRequest="50" ImageSource="mas.png" BorderColor="Black" BorderWidth="1.5" Command="{Binding VerAgregarCommand}"></Button>
+                    </Grid>
+                </Border>
+            </StackLayout>
+            <Border Grid.Row="1" Margin="10,-10,10,20" Background="#fee5bd" Stroke="#642715" StrokeThickness="1.5">
+                <CollectionView ItemsLayout="VerticalList" ItemsSource="{Binding ListaIngredientes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:IngredienteView>
+                                <views:IngredienteView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference Lista}, Path= BindingContext.VerDetallesCommand}" NumberOfTapsRequired="1" CommandParameter="{Binding .}">
+                                        
+                                    </TapGestureRecognizer>
+                                </views:IngredienteView.GestureRecognizers>
+                            </views:IngredienteView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+        </Grid>
+    </Border>
+</ContentPage>
